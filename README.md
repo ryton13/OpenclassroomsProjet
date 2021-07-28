@@ -1,81 +1,84 @@
 # OpenclassroomsProjet
 
-Verifies sub-directories integrity of a post-production project.
-# Scenario :
-Images are rendered on computers/renderfarms and dropped on a server. As the tree structure can be different in each project, CheckSeq will only be run at the sequence level. (Sequence/Shots/Images)
+### Scripts d'installation de logiciels sur Windows et sur Linux. ###
 
-# Main purpose :
-Check if the shots directories contain :
+## Scenario :
 
-The file (.bounds) identifying the required start/end bounds of the shot.
-The adequacy with the number of images found.
-Files with the correct number of fields (name.number.extension)
-Files with the correct numerical field (4 digits, ie ####)
-Files with the correct extension
-Files with non-zero weight
-All the requested images, searching for missing files
-# Usage :
-The tool is usable in a punctual case as well as on daily/hourly checks. It can be launched by a cron task, or a customized script.
+  Entreprise de plus de 50 salariés, ordinateurs et pc portable multi-marques. 
 
-If launched manually, the script generates a human readable report, that highlights the possible mistakes found. It can be launched shot by shot, or more globally in a sequence.
 
-If automated, the user will be able to check the web version of the dump, which can be seen on any device that handles http pages.
+## Objectif principal :
 
-In both cases, it will also generate a log report that would rather be intended for system administrators.
+  
+  - Installation de logiciels récurrents en mode silence
+  - Gains de temps
+  
 
-The web-tool is oriented for post-production supervisors, who can quickly glance at shots in progress, see the possible errors, or simply check the calculation progress.
+## Utilisation :
 
-# Requirements :
-Python3 must be installed on the server if automated, or on the client in case of a network-shared usage.
+  L'outil est utilisable sur Windows 10 ou sur un système Unix.
+Il peut être lancé par le plannificateur de tâche, une tâche cron ou un script personnalisé.
 
-It runs on Linux and Windows (with cygwin).
 
-Needed in the installation directory :
 
-olCheckSeq.py
-olCheckShot.py
-and the subDirectories :
+## Conditions :
 
-olCheckLibs/
-olCheckLib.py
-olHtmlLib.py
-olCheckWebRef/
-index.htm
-intro.htm
-seqReport.htm
-# Installation :
-Go to the place where you want to download the archive.
+Python3 doit être installé sur le client s'il est automatisé.
 
-Download the .zip archive of the program here.
-or type :
+Les scripts tournent sous Linux et Windows.
 
-> git clone https://github.com/OL-GIT/CheckShot.git
-then proceed with the installation :
+Dans le repertoire d'installation doivent figurer :
 
-> cd CheckShot
-> chmod 774 ./install.bash
-> sudo ./install.bash
- # Method :
-olCheckSeq.py can be run at the sequence level. You need to specify the name of the shots you want to check :
+  * googlechromestandaloneenterprise64.msi
+  * setup.exe
+  * Teams_windows_x64.exe
+  * OperaSetup.exe
+  * ZoomInstaller.exe
+  * winrar-x64-XXXfr.exe
+  * vlc-X.X.XX-win64.exe
+  * LibreOffice_X.X.X-Win_64.msi
+  * AcroRdrDC2100520048_fr_FR.exe
+  * jre-8u291-windows-x64.exe
+  * npp.X.X.Installer.exe
+  * Configuration.xml
+  * 7zXXX-x64.exe
+  
+et le répertoire :
+  * Office/
+    
 
-> python3 olCheckSeq.py P1 P2 P3
-> python3 olCheckSeq.py P*
-> python3 olCheckSeq.py *
-olCheckShot.py can be run at the shot level. It does not need any argument :
+## Installation :
 
-> python3 olCheckShot.py
- # Results :
-. If launched manually, checkSeq and checkShot will display the results in the console.
-This method is recommended for punctual needs.
 
-. The HTML minisite will be found in $PROJ/$SEQ/.web/index.htm
-It will display seqreport.htm in the left frame.
+- Téléchargez et décompressez le répertoire 2.Win_install.zip
 
-The shot reports are written in $PROJ/$SEQ/$SHOT/report.htm
+- Lancez installation : 
 
-They will we displayed in the right frame of the minisite.
+```
+ouvrir un Invite de commande en tant qu'administrateur
 
-Archived versions of report.htm are copied to report_$PROJ_$SEQ_$SHOT_DATE_TIME.htm
+> cd 2.Win_install/
+> python software.py
+> 
+```
 
-The global log files will be found in $PROJ/LOGS/ (olCheckSeqlog.DATE-TIME.txt)
-They contain short versions of the console dumps.
+## Resultats :
+
+- S'ils sont lancés manuellement, checkSeq et checkShot afficheront les résultats dans la console.
+
+>Cette méthode est recommandée pour un usage ponctuel.
+
+- Le ministe HTML se trouve dans $PROJ/$SEQ/.web/index.htm
+
+>seqreport.htm est affiché dans le cadre de gauche.
+
+>Les rapports de plans sont écrits dans $PROJ/$SEQ/$SHOT/report.htm
+
+>Ils seront affichés dans le cadre de droite du minisite.
+
+>Des versions archivées de report.htm sont copiées dans report_$PROJ_$SEQ_$SHOT_DATE_TIME.htm
+
+- Les fichiers globaux de log sont dans $PROJ/LOGS/ (olCheckSeqlog.DATE-TIME.txt)
+
+>Ils contiennent des versions courtes des retours console.
+
