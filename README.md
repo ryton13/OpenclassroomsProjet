@@ -50,7 +50,7 @@ et le répertoire :
 ## Installation :
 
 
-- Téléchargez et décompressez le répertoire 2.Win_install.zip
+- Téléchargez et décompressez le répertoire 2.Win_install.zip (https://cloudlasalle-my.sharepoint.com/:f:/g/personal/henri_kahudi_unilasalle_fr/Elg9YPTjsYFJsscTRTjIvzwB-DyOWrPgcJ-pTbKa7CyFaQ?e=zOTtPd) 
 
 - Lancez installation : 
 
