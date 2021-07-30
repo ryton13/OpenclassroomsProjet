@@ -1,5 +1,5 @@
 #################################################################################
-#      Installation des logiciels de base                                       #
+#      Installation des logiciels de base Version 2                             #
 #             Juin 2021                                                         #
 #            Henri KAHUDI                                                       #
 #################################################################################
